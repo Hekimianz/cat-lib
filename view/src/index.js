@@ -1,5 +1,17 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+} from "react-router-dom";
+import Home from "./Home";
 
-const root = createRoot(document.getElementById("root"));
-root.render(<h1>hi</h1>);
+const router = createBrowserRouter(
+  createRoutesFromElements(<Route path="/" element={<Home />}></Route>)
+);
+
+createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
